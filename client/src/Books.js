@@ -21,6 +21,7 @@ class Books extends Component {
             })
             console.log(this.data)
     }
+
     handleSubmit = (e) => {
         e.preventDefault();
         request
@@ -31,13 +32,15 @@ class Books extends Component {
                 this.setState({ books: [...data.body.items] })
         })
     }
+
     handleChange = (e) => {
         this.setState({ searchField: e.target.value })
     }
+
     handleSort = (e) => {
         this.setState({ sort: e.target.value});
     }
-    
+
     render() {
         const filteredBooks = this.state.books.sort((a, b) => {
             if(this.state.sort === 'Newest'){
@@ -49,6 +52,7 @@ class Books extends Component {
             }
             return;
         })
+
         return (
             <div className="wrapper">
                 <SearchBox 

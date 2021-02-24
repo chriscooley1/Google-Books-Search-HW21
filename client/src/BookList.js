@@ -7,7 +7,7 @@ const BookList = (props) => {
             {
                 props.books.map((book) => {
                     return <BookCard key={book.id} info={book} />
-            })
+                })
             }
         </div>
     );
